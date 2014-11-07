@@ -1,0 +1,19 @@
+#!/bin/bash
+
+DIR="$( cd "$(dirname "$0")" && pwd)"
+
+ROOT_UID="0"
+if [ "$UID" -ne "$ROOT_UID" ]; then
+	echo "You must run this script with sudo"
+	exit 1
+fi
+
+if [ -e "/srv/salt" ]; then
+	echo "Removing old salt store"
+	rm -rvf "/srv/salt"
+fi
+
+echo "Creating salt filestore link"
+ln -s "$DIR/file-server" "/srv/salt"
+
+# vim: set ft=sh: #
