@@ -1,4 +1,0 @@
-base:
-  '*':
-    - users
-    - users.sudo

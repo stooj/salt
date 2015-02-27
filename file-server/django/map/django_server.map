@@ -1,0 +1,19 @@
+rackspace-ubuntu-trusty-512:
+    - dev.lists.stooj.org:
+        minion:
+            grains:
+                environment_id: django
+                project: superlists
+                environment: development
+                location: syd
+                roles:
+                    - django_server
+    - lists.stooj.org:
+        minion:
+            grains:
+                environment_id: django
+                project: superlists
+                environment: production
+                location: syd
+                roles:
+                    - django_server
