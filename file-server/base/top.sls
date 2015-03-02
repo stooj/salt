@@ -3,5 +3,9 @@ base:
     - common
 
 django:
-  'G@project:superlists':
+  'G@roles:django_server':
     - ntp
+    - nginx
+    - python3
+    - python3-pip
+    - virtualenv
